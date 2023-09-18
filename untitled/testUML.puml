@@ -1,0 +1,86 @@
+@startuml
+class Sem1.testElement.Car {
+~ FuelType fuelType
+- int speed
++ String color
++ void accelerate()
++ void brake()
++ void drive()
+~ void start()
+}
+abstract class Sem1.testConnection.Animal {
+~ void breathe()
+}
+interface Sem1.testConnection.Eatable {
+~ void eat()
+}
+class Sem1.testConnection.Mammal {
+}
+class Sem1.testConnection.Human {
+~ Cat petCat
++ void eat()
+~ void ownCat(Cat)
+}
+class Sem1.testConnection.Cat {
+~ void meow()
+}
+class Sem1.testConnection.House {
+~ Room room
+}
+class Sem1.testConnection.Room {
+~ void description()
+}
+class Sem1.testConnection.Main {
++ {static} void main(String[])
+}
+interface Sem1.additionalInformation.Payable {
+~ void payTuition()
+}
+class Sem1.additionalInformation.CollegeStudent {
+~ String collegeName
++ void payTuition()
+}
+class Sem1.additionalInformation.Main {
++ {static} void main(String[])
+}
+interface Sem1.testElement.Drivable {
+~ void drive()
+}
+abstract class Sem1.testElement.Vehicle {
+~ String make
+~ {abstract}void start()
+}
+enum Sem1.testElement.FuelType {
++  PETROL
++  DIESEL
++  ELECTRIC
+}
+class Sem1.testElement.ElectricCar {
+~ int batteryLife
+~ void charge()
+~ void start()
+}
+class Sem1.testElement.Main {
++ {static} void main(String[])
+}
+class Sem1.additionalInformation.Student {
+- String name
++ int age
+# String id
++ void study()
+# void takeExam()
+- void sleep()
++ {static} void staticMethod()
++ String toString()
+}
+
+
+Sem1.testElement.Drivable <|.. Sem1.testElement.Car
+Sem1.testElement.Vehicle <|-- Sem1.testElement.Car
+Sem1.testConnection.Animal <|-- Sem1.testConnection.Mammal
+Sem1.testConnection.Eatable <|.. Sem1.testConnection.Human
+Sem1.testConnection.Mammal <|-- Sem1.testConnection.Human
+Sem1.additionalInformation.Payable <|.. Sem1.additionalInformation.CollegeStudent
+Sem1.additionalInformation.Student <|-- Sem1.additionalInformation.CollegeStudent
+Sem1.testElement.Car <|-- Sem1.testElement.ElectricCar
+@enduml
