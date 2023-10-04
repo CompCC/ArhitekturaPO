@@ -1,0 +1,17 @@
+@startuml
+class HomeWork3.OpenclosedPrinciple.EmailNotification {
++ void sendMessage(String)
+}
+interface HomeWork3.OpenclosedPrinciple.NotificationService {
++ void sendMessage(String)
+}
+class HomeWork3.OpenclosedPrinciple.Main {
+}
+class HomeWork3.OpenclosedPrinciple.MobileNotification {
++ void sendMessage(String)
+}
+
+
+HomeWork3.OpenclosedPrinciple.NotificationService <|.. HomeWork3.OpenclosedPrinciple.EmailNotification
+HomeWork3.OpenclosedPrinciple.NotificationService <|.. HomeWork3.OpenclosedPrinciple.MobileNotification
+@enduml

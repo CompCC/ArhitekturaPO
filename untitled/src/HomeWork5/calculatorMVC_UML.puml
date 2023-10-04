@@ -1,0 +1,53 @@
+@startuml
+class HomeWork5.model.substractOperation.SubstractOperation {
+~ double firstArg
+~ double secondArg
++ double subtract()
+}
+class HomeWork5.view.OutputSlice {
+~ void displayOutput(String)
+}
+class HomeWork5.view.InputOutputLayer {
+~ String getInput()
+~ void displayOutput(String)
+}
+class HomeWork5.model.sumOperation.SumOperation {
+~ double firstArg
+~ double secondArg
++ double sum()
+}
+class HomeWork5.view.ConsoleView {
+~ InputOutputLayer ioLayer
+~ CalculationLayer calcLayer
++ void runCalculator()
+}
+class HomeWork5.bd.DatabaseManagementSlice {
+~ void saveData(String)
+~ String fetchData()
+}
+interface HomeWork5.view.IView {
+~ void runCalculator()
+}
+class HomeWork5.view.InputSlice {
+~ String getInput()
+}
+class HomeWork5.model.CalculationLayer {
++ double add(double,double)
++ double subtract(double,double)
++ double multiply(double,double)
++ double divide(double,double)
+}
+class HomeWork5.model.multiplyOperation.MultiplyOperation {
+~ double firstArg
+~ double secondArg
++ double multiply()
+}
+class HomeWork5.model.divideOperation.DivideOperation {
+~ double firstArg
+~ double secondArg
++ double divide()
+}
+
+
+HomeWork5.view.IView <|.. HomeWork5.view.ConsoleView
+@enduml
