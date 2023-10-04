@@ -1,28 +1,36 @@
 @startuml
+' Вычитание - это горизонтальный слой
 class HomeWork5.model.substractOperation.SubstractOperation {
 ~ double firstArg
 ~ double secondArg
 + double subtract()
 }
+' Вывод результата на экран
 class HomeWork5.view.OutputSlice {
 ~ void displayOutput(String)
 }
 class HomeWork5.view.InputOutputLayer {
+' Чтение данных от пользователя
 ~ String getInput()
+' Вывод результатов на экран
 ~ void displayOutput(String)
 }
+' Сумма - это горизонтальный слой
 class HomeWork5.model.sumOperation.SumOperation {
 ~ double firstArg
 ~ double secondArg
 + double sum()
 }
 class HomeWork5.view.ConsoleView {
+' В данном классе осуществляется инициализация и запуск программы
 ~ InputOutputLayer ioLayer
 ~ CalculationLayer calcLayer
 + void runCalculator()
 }
 class HomeWork5.bd.DatabaseManagementSlice {
+' Реализация сохранения данных в базу данных
 ~ void saveData(String)
+' Реализация извлечения данных из базы данных
 ~ String fetchData()
 }
 interface HomeWork5.view.IView {
@@ -31,17 +39,26 @@ interface HomeWork5.view.IView {
 class HomeWork5.view.InputSlice {
 ~ String getInput()
 }
+
+' Уровень вычислений, каждое действие выполняется отдельным классом
+' Это есть вертикальный срез
 class HomeWork5.model.CalculationLayer {
+' сложение
 + double add(double,double)
+' вычитание
 + double subtract(double,double)
+' умножение
 + double multiply(double,double)
+' деление
 + double divide(double,double)
 }
+' Умножение - это горизонтальный слой
 class HomeWork5.model.multiplyOperation.MultiplyOperation {
 ~ double firstArg
 ~ double secondArg
 + double multiply()
 }
+' Деление - это горизонтальный слой
 class HomeWork5.model.divideOperation.DivideOperation {
 ~ double firstArg
 ~ double secondArg
