@@ -1,4 +1,4 @@
-package Sem6.decorator;
+package Sem6.patterns.decorator;
 
 // Интерфейс для животных
 interface IAnimalDiscriber {

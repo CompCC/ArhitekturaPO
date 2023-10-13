@@ -1,4 +1,4 @@
-package Sem6.composite2;
+package Sem6.patterns.composite2;
 
 import java.util.ArrayList;
 import java.util.List;

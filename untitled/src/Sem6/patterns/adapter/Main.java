@@ -1,4 +1,4 @@
-package Sem6.patterns;
+package Sem6.patterns.adapter;
 
 // Класс Лев
 class Lion {
